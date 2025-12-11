@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Alam Hijau Pastel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            color: #2e7d32;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #4caf50;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: sway 3s infinite ease-in-out;
+        }
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #4caf50;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #81c784;
+            transition: all 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        nav a:hover {
+            color: #81c784;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 70px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        section::before {
+            content: '🌿';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 2em;
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            color: #4caf50;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .card::after {
+            content: '🌸';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .card:hover::after {
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .card:hover img {
+            transform: scale(1.1);
+        }
+        p {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-weight: 300;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        li {
+            background: linear-gradient(45deg, #f1f8e9, #e8f5e8);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        li:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #4caf50;
+        }
+        footer p {
+            margin: 0;
+            color: #2e7d32;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌳 Nature Is Key 🌳</h1>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#gallery">Galeri</a>
+        </nav>
+    </header>
+    
+    <main id="home">
+        <section>
+            <p>Selamat datang di oasis hijau pastel! Tema alam ini membawa kedamaian dengan warna hijau lembut, UI yang elegan, dan emoji tanaman yang menyegarkan. 🌿🌸 Nikmati keindahan alam virtual ini!</p>
+        </section>
+        
+        <section id="about">
+            <h2>Kenapa Tema Alam? 🌱</h2>
+            <p>Untuk menghadirkan ketenangan dan keceriaan alami. Dengan gradien hijau pastel, animasi sway seperti daun bergoyang, dan elemen UI yang lebih halus, halaman ini seperti taman kecil di layar Anda. 🍃</p>
+            <ul>
+                <li>Animasi sway pada judul seperti angin sepoi-sepoi 🍂</li>
+                <li>Galeri dengan efek scale dan bunga muncul 🌸</li>
+                <li>Navigasi dengan underline hijau alami 🌿</li>
+                <li>Float animation pada emoji tanaman ✨</li>
+            </ul>
+        </section>
+        
+        <section id="gallery">
+            <h2>Galeri Alam Indah 🌼</h2>
+            <div class="gallery">
+                <div class="card">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Pemandangan alam 1">
+                    <p>Pemandangan hijau pertama yang menenangkan! 🌳</p>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/300/200?random=2" alt="Pemandangan alam 2">
+                    <p>Pemandangan hijau kedua yang segar! 🌿</p>
+                </div>
+                <div class="card">
+                    <img src="https://picsum.photos/300/200?random=3" alt="Pemandangan alam 3">
+                    <p>Pemandangan hijau ketiga yang indah! 🌸</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Halaman Alam Hijau Pastel. Dibuat dengan ❤️ untuk kedamaian! 🌱</p>
+    </footer>
+</body>
+</html>
